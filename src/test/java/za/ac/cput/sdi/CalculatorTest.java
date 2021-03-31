@@ -14,18 +14,22 @@ class CalculatorTest {
     void setUp() {
          y = x;
     }
+    //Identity test
     @Test
     public void testIdentity(){
         assertSame(x,y);
     }
+    //Equality test
     @Test
     public void testEquality(){
         assertEquals(x,y);
     }
+    //failing Test
     @Test
     public void failingTest(){
         assertNotSame(x,y);
     }
+    //Disabled Test
     @Test
     @Disabled
     public void disablingTest(){
