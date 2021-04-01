@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
@@ -34,6 +36,14 @@ class CalculatorTest {
     @Disabled
     public void disablingTest(){
         assertNotSame(y,z);
+    }
+    // testTimeout
+    @Test
+    public void testTimeout(){ assertTimeout (Duration.ofMillis(20),() -> {
+               Thread.sleep(5000);
+
+        System.out.println("I got here");
+    });
     }
 
 }
